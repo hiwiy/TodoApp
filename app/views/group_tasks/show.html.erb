@@ -1,0 +1,40 @@
+<head>
+</head> 
+ <%= render 'nav' %>
+
+<div class="container">
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>description</th>
+    <th>person in charge</th>
+    <th>status</th>
+    <th> created at</th>
+    <th> updated at</th>
+   
+  </tr>
+ 
+ 
+    <tr>
+      <td><%= @group_task.title %></td>
+      <td><%= @group_task.body %></td>
+      <td><%= @group_task.pincharge %></td>
+       <td><%= if @group_task.status == true
+              'completed' 
+        else
+             'uncompleted'
+        end %>
+      </td>
+       <td><%= @created = @group_task.created_at %></td>
+       <td><%=@updated =@group_task.updated_at %></td>
+      <td><%= link_to 'Edit', edit_group_task_path(@group_task) %></td>
+       <td><%= link_to 'Destroy', group_task_path(@group_task),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  
+</table>
+<div>
+<%= link_to 'Back', group_tasks_path %> 
+<%= render 'tasks/footer' %>
+

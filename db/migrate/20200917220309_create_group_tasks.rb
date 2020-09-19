@@ -1,0 +1,13 @@
+class CreateGroupTasks < ActiveRecord::Migration[5.2]
+  def change
+    create_table :group_tasks do |t|
+      t.string :title
+      t.string :body
+      t.string :pincharge
+      t.boolean :status, default: false
+      t.references :user, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

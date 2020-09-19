@@ -1,0 +1,26 @@
+<head>
+</head> 
+  <%= render 'nav'%>
+
+<div class="container">
+<table class="table">
+  <tr>
+    <th>Task</th>
+    <th>status</th>
+    <th> created at</th>
+    <th> updated at</th>
+  </tr>
+ 
+ 
+    <tr>
+      <td><%= @task.name %></td>
+      <td><%= @task.status %></td>
+       <td><%= @created = @task.created_at %></td>
+       <td><%=@updated =@task.updated_at %></td>
+      <td><%= link_to 'Edit', task_path(@task) %></td>
+    </tr>
+  
+</table>
+<div>
+<%= render 'footer'%>
+

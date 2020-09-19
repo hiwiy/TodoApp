@@ -1,0 +1,14 @@
+<%= form_with scope: :task, url: tasks_path, local: true do |form| %>  
+<p>
+    <%= form.label :Task %>
+    <%= form.text_area :name, required:true %>
+  <h2></h2>
+    <%= form.label :'Task Completed?' %>
+    <%= form.check_box :status%>
+  </p>
+ 
+ <div class="btn btn-success">
+             <%= form.submit :class=>"btn" %>
+   </div> 
+
+<% end %>
